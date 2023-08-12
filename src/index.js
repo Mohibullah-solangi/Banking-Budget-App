@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import {legacy_createStore } from 'redux'
 import reducers from './reducers';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 let store = legacy_createStore(reducers);
 
