@@ -10,6 +10,9 @@ const amountReducer = (state =0 , action) => {
     else if (action.type==='withdraw'){
       return [state - action.payload, console.log("withdraw")]
     }
+    else if (action.type==='send'){
+      return [state - action.payload, console.log("send")]
+    }
     else {
       return [state, console.log("initial Value")]; 
     }
