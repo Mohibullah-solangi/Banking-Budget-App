@@ -47,6 +47,20 @@ body{
   padding: 3em 4em 1em 4em;
 }
 
+#display-actions{
+  background-color: aliceblue;
+  border-radius: 5%;
+  box-shadow: 5px 5px 5px grey;
+  padding: 1em;
+}
+
+#expense{
+  background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px grey;
+  padding: 3em 4em 1em 4em;
+}
+
 #balance{
   letter-spacing: 1px;
   color: rgb(108, 8, 108);
