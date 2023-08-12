@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body{
+  background-color: #eecac5;
+}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +38,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#display{
+  background-color: aliceblue;
+  border-radius: 5%;
+  box-shadow: 5px 5px 5px grey;
+  padding: 3em 4em 1em 4em;
+}
+
+#balance{
+  letter-spacing: 1px;
+  color: rgb(108, 8, 108);
+  
+}
+#diplay > :nth-child(1){
+  font-size: 8px;
+}
+
+#display > h4 > span{
+  font-size: 12px;
+}
+#display-footer{
+  display: flex;
+  margin: 2em 0 0 0;
+  justify-content: space-between;
+  
 }
