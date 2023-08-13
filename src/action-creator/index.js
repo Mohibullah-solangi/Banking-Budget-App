@@ -26,3 +26,12 @@ export const withdraw = (money) => {
       }
     )
   }
+export const name = ()=>{
+
+  return(
+    {
+      type: 'name',
+      
+    }
+  )
+}

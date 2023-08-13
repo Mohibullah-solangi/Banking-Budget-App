@@ -3,19 +3,26 @@ import send_img from "../images/icons8-send-money-96.png";
 import withdraw_img from "../images/icons8-withdraw-64.png";
 import friend_img from "../images/icons8-friends-96.png";
 import logo from "../images/vDHlc1gATvGuir2mwpUF_Y0uugH16L6gtYdVq.png";
-import { deposit, withdraw, send } from "../action-creator";
+import { deposit, withdraw, send, name} from "../action-creator";
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FormControl } from "react-bootstrap";
+import { useSelector } from "react-redux/es/hooks/useSelector"; 
+
+
 
 
 const Display = () => {
+
+  const name1 = useSelector(state =>  state.info);
+
   const current = new Date();
   const date = `${current.getDate()}/${
     current.getMonth() + 1
   }/${current.getFullYear()}`;
+
   const Dispatch = useDispatch();
 
   const [show_Deposit, setshow_Deposit] = useState(false);
@@ -36,6 +43,9 @@ const Display = () => {
  
 
 
+  
+  
+
   return (
     <>
       <div className="container mt-5">
@@ -45,7 +55,7 @@ const Display = () => {
         </h1>
         <div className="row offset-2 mt-5">
           <div className="col-md-5 bg-light m-1" id="display">
-            <h6>MOHIB ULLAH</h6>
+            <h6 id="name">{name1 ? name1: Dispatch(name())}</h6>
             <h4 id="balance">
               Rs. 2000 <span>.00</span>
             </h4>
