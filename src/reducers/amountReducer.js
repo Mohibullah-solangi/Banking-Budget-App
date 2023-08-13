@@ -1,6 +1,6 @@
 // import React from 'react'
 
-const amountReducer = (state =0 , action) => {
+const amountReducer = (state =2000 , action) => {
  
     
     if (action.type==='deposit'){
