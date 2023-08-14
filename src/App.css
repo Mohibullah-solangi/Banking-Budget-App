@@ -1,9 +1,12 @@
 .App {
   text-align: center;
+ 
+  background: linear-gradient( 35%,#fff0f1 100%,#faf5f5);
 }
 body{
-  background-color: #eecac5;
+  background: linear-gradient(#feecee 35%,#fff0f1 100%,#faf5f5);
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -80,6 +83,29 @@ body{
   
 }
 
+#logo{
+  height: 80px;
+}
+
 #link{
   color: rgb(108, 8, 108);
+}
+
+@media only screen and (max-width: 375px) {
+#display{
+  font-size: x-small;
+}
+
+  #display-footer {
+    font-size: 10px;
+  }
+
+  #balance1{
+    font-size: large;
+  }
+  #logo{
+    height: 70px;
+  }
+
+  
 }

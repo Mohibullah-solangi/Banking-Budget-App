@@ -3,34 +3,34 @@ import send_img from "../images/icons8-send-money-96.png";
 import withdraw_img from "../images/icons8-withdraw-64.png";
 import friend_img from "../images/icons8-friends-96.png";
 import logo from "../images/vDHlc1gATvGuir2mwpUF_Y0uugH16L6gtYdVq.png";
-import { deposit, withdraw, send, info} from "../action-creator";
+import { deposit, withdraw, send} from "../action-creator";
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FormControl } from "react-bootstrap";
-import { useSelector } from "react-redux/es/hooks/useSelector"; 
-
-
+// import { useSelector } from "react-redux/es/hooks/useSelector"; 
 
 
 const Display = () => {
+
+  
   const Dispatch = useDispatch();
-  Dispatch(info())
-  const Info = useSelector(state =>  state.info);
  
-  let Values = Object.values(Info)
- const obj = JSON.parse(Values[0])
- const Name = obj.Firstname;
- const Deposit = obj.InitialDeposit;
+
+  // const Amount = useSelector(state =>  state.amount);
 
 
-  const current = new Date();
+ 
+ const current = new Date();
   const date = `${current.getDate()}/${
     current.getMonth() + 1
   }/${current.getFullYear()}`;
 
- 
+ const Info = localStorage.getItem("Entry");
+ const info = JSON.parse(Info);
+ const Name = info.Firstname;
+ const Deposit = info.InitialDeposit;
 
   const [show_Deposit, setshow_Deposit] = useState(false);
   const handleClose_d = () => [setshow_Deposit(false), console.log("close")];
@@ -49,19 +49,15 @@ const Display = () => {
   const [input_send, setinput_send] = useState(0);
  
 
-
-  
-  
-
   return (
     <>
-      <div className="container mt-5">
-        <h1 className="text-center" id="balance">
-          {" "}
-          <img src={logo} alt="" style={{ height: "80px" }} /> &nbsp;Gullak Bank
+      <div className="container mt-5 px-sm-4">
+        <h1 className="text-center" id="balance1">
+          
+          <img id="logo" src={logo} alt="" /> &nbsp;Gullak Bank
         </h1>
-        <div className="row offset-2 mt-5">
-          <div className="col-md-5 bg-light m-1" id="display">
+        <div className="row offset-md-0 px-2 px-sm-5 offset-lg-2 mt-5">
+          <div className="col-lg-5 mx-md-auto mx-lg-1 bg-light m-1" id="display">
             <h6 id="name">{Name}</h6>
             <h4 id="balance">
               Rs. {Deposit} <span>.00</span>
@@ -72,10 +68,10 @@ const Display = () => {
               <span>Share Acc. No</span>
             </h6>
           </div>
-          <div className="col-lg-6">
-            <div className="row">
+          <div className="col-lg-6 px-4 px-sm-0">
+            <div className=" d-flex justify-content-center justify-content-sm-start row offset-sm-2 offset-lg-0">
               <div
-                className="col-4 bg-light m-1 align-items-center"
+                className="col-lg-4 col-5 bg-light m-1 align-items-center"
                 id="display-actions"
                 onClick={handleShow_d}
                 variant="primary"
@@ -87,7 +83,7 @@ const Display = () => {
               </div>
 
               <div
-                className="col-4 bg-light m-1"
+                className="col-lg-4 col-5 bg-light m-1"
                 id="display-actions"
                 onClick={handleShow_s}
               >
@@ -96,16 +92,16 @@ const Display = () => {
                 <h6>Send Money</h6>
               </div>
             </div>
-            <div className="row">
+            <div className=" d-flex justify-content-center justify-content-sm-start row offset-sm-2 offset-lg-0">
               <div
-                className="col-4 bg-light m-1"
+                className="col-lg-4 col-5 bg-light m-1"
                 id="display-actions"
                 onClick={handleShow_w}
               >
                 <img src={withdraw_img} alt="" style={{ height: "45px" }} />
                 <h6>Widhdraw</h6>
               </div>
-              <div className="col-4 bg-light m-1" id="display-actions">
+              <div className="col-lg-4 col-5 bg-light m-1" id="display-actions">
                 <img src={friend_img} alt="" style={{ height: "50px" }} />
                 <h6>Friends</h6>
               </div>
@@ -113,8 +109,8 @@ const Display = () => {
           </div>
         </div>
 
-        <div className="row offset-2">
-          <div className="col-9 bg-light mt-2 mx-3" id="expense">
+        <div className="row d-flex justify-content-center justify-content-sm-start offset-sm-1 offset-md-2">
+          <div className="col-11 col-md-10 col-lg-9  bg-light mt-2 mx-3 my-5" id="expense">
             Expense
           </div>
         </div>
