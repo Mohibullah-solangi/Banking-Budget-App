@@ -1,17 +1,18 @@
 
 
-const informationGet = (state ="", action) => {
+const informationGet = (state = "", action) => {
  
 
 
-    if(action.type === 'name'){
+    if(action.type === 'info'){
         const entry = localStorage.getItem("Entry")
-        let Info = JSON.parse(entry)
+        
 
-        let Name = Info.Firstname;
-        return [state = Name, console.log(state)]
+       
+        return [state = entry, console.log(state)]
       
     }
+   
     else{
         return state;
     }

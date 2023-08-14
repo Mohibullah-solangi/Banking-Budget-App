@@ -3,9 +3,12 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import logo from "../images/vDHlc1gATvGuir2mwpUF_Y0uugH16L6gtYdVq.png";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+
+
+let navigate = useNavigate();
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -47,9 +50,9 @@ const SignIn = () => {
       <FloatingLabel controlId="floatingPassword" label="Password">
         <Form.Control name='password' type="password" value={UserInfo.password} placeholder="Password" onChange={handleinput}/>
       </FloatingLabel >
-      <Button variant="outline-success" className="col-md-4 mt-4" type="submit">SignIn</Button>
+      <Button variant="outline-success" className="col-md-4 mt-4" type="submit" onClick={()=>{navigate("/dashboard")}}>SignIn</Button>
       </Form>
-      <div className='d-flex justify-content-center mt-3 letter-spacing'>Don't have an account?&nbsp; <Link variant="success" className="active" id='link' aria-current="page" to="/Signup">Signup!</Link></div>
+      <div className='d-flex justify-content-center mt-3 letter-spacing'>Don't have an account?&nbsp; <Link variant="success" className="active" id='link' aria-current="page" to="/signup">Signup!</Link></div>
       </div>
       </div>
       </div>

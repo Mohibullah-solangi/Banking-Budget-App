@@ -3,11 +3,13 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import logo from "../images/vDHlc1gATvGuir2mwpUF_Y0uugH16L6gtYdVq.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { name } from "../action-creator";
 import { useDispatch } from "react-redux";
 
 const Signup = () => {
+
+  let navigate = useNavigate();
   const Dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -128,6 +130,7 @@ const Signup = () => {
                 variant="outline-success"
                 className="col-md-4 mt-4"
                 type="submit"
+                onClick={()=>{navigate("/")}}
               >
                 SignUp
               </Button>
