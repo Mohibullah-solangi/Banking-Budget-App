@@ -46,21 +46,21 @@ body{
 #display{
   background-color: aliceblue;
   border-radius: 5%;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 0px 5px 5px grey;
   padding: 3em 4em 1em 4em;
 }
 
 #display-actions{
   background-color: aliceblue;
   border-radius: 5%;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 0px 5px 5px grey;
   padding: 1em;
 }
 
 #expense{
   background-color: aliceblue;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 0px 5px 5px grey;
   padding: 3em 4em 1em 4em;
 }
 
@@ -106,6 +106,17 @@ body{
   #logo{
     height: 70px;
   }
+#expenses > div{
+  font-size: small;
+}
 
-  
+#expense_btn{
+  font-size: 10px;
+}
+
+#expense{
+ 
+  padding: 2em 2em 1em 2em;
+}
+
 }

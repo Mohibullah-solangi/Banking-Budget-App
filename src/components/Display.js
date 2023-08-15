@@ -109,9 +109,16 @@ const Display = () => {
           </div>
         </div>
 
-        <div className="row d-flex justify-content-center justify-content-sm-start offset-sm-1 offset-md-2">
-          <div className="col-11 col-md-10 col-lg-9  bg-light mt-2 mx-3 my-5" id="expense">
-            Expense
+        <div className="row  offset-sm-0 offset-md-2 offset-lg-3">
+          <div className="col-11 col-md-10 col-lg-8  bg-light mt-2 mx-3 mb-5 text-start" id="expense">
+            Expenses
+            <div className="row" id="expenses">
+              <div className="col-6 col-md-8">Expense</div>
+              <div className="col-3 col-md-2">Cost</div>
+              <div className="col-3 col-md-2">Action</div>
+              
+              </div>
+              <button type="button"  className="btn btn-outline-success btn-sm my-2" id="expense_btn"> Add Expense</button>
           </div>
         </div>
       </div>
@@ -119,7 +126,7 @@ const Display = () => {
       <Modal
                   show={show_Deposit}
                   onHide={handleClose_d}
-                  backdrop="static"
+                  backdrop="static" 
                   keyboard={false}
                   centered
                 >
