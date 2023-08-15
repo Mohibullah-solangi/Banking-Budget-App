@@ -57,6 +57,10 @@ body{
   padding: 1em;
 }
 
+#display-actions:hover{
+  cursor: pointer;
+}
+
 #expense{
   background-color: aliceblue;
   border-radius: 10px;
@@ -82,6 +86,9 @@ body{
   justify-content: space-between;
   
 }
+#display-footer span:hover{
+   cursor: pointer;
+}
 
 #logo{
   height: 80px;
@@ -90,6 +97,13 @@ body{
 #link{
   color: rgb(108, 8, 108);
 }
+#expense{
+  color: rgb(108, 8, 108);
+}
+#expenses{
+  color: black;
+}
+
 
 @media only screen and (max-width: 375px) {
 #display{
@@ -108,10 +122,13 @@ body{
   }
 #expenses > div{
   font-size: small;
+  
 }
 
 #expense_btn{
   font-size: 10px;
+  
+ 
 }
 
 #expense{

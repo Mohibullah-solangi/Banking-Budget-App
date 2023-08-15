@@ -26,13 +26,36 @@ export const withdraw = (money) => {
       }
     )
   }
-export const info = ()=>{
+
+
+export const friend = (name, email)=>{
+   
+  let obj = {}
+  obj.Name = name;
+  obj.Email = email;
 
   return(
     {
-      type: 'info'
+      type: 'friend',
+      payload: obj
       
     }
   )
 }
 
+
+
+export const expense = (name, Amount)=>{
+   
+  let obj = {}
+  obj.Name = name;
+  obj.Amount = Amount;
+
+  return(
+    {
+      type: 'expense',
+      payload: obj
+      
+    }
+  )
+}

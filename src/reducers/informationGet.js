@@ -4,12 +4,16 @@ const informationGet = (state = "", action) => {
  
 
 
-    if(action.type === 'info'){
-        const entry = localStorage.getItem("Entry")
+    if(action.type === 'friend'){
         
+       localStorage.setItem("Friend", JSON.stringify(action.payload));
+      
+       let user = localStorage.getItem("Friend")
+            let friend = JSON.parse(user)
+       state = friend.Name 
 
        
-        return [state = entry, console.log(state)]
+        return [ state, console.log("friend added")]
       
     }
    

@@ -4,13 +4,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import logo from "../images/vDHlc1gATvGuir2mwpUF_Y0uugH16L6gtYdVq.png";
 import { Link, useNavigate } from "react-router-dom";
-import { info } from "../action-creator";
-import { useDispatch } from "react-redux";
+
 
 const Signup = () => {
 
   let navigate = useNavigate();
-  const Dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -19,7 +18,8 @@ const Signup = () => {
     }
     const NewRecord = { ...UserInfo };
     localStorage.setItem("Entry", JSON.stringify(NewRecord));
-    Dispatch(info());
+   
+    navigate("/")
 
   };
   const handleinput = (e) => {
@@ -130,7 +130,7 @@ const Signup = () => {
                 variant="outline-success"
                 className="col-md-4 mt-4"
                 type="submit"
-                onClick={()=>{navigate("/")}}
+                
               >
                 SignUp
               </Button>

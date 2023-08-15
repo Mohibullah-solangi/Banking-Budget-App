@@ -20,6 +20,7 @@ let navigate = useNavigate();
    }
    else{
           console.log("logged-in")
+          navigate("/dashboard")
    }
 
     }
@@ -50,7 +51,7 @@ let navigate = useNavigate();
       <FloatingLabel controlId="floatingPassword" label="Password">
         <Form.Control name='password' type="password" value={UserInfo.password} placeholder="Password" onChange={handleinput}/>
       </FloatingLabel >
-      <Button variant="outline-success" className="col-md-4 mt-4" type="submit" onClick={()=>{navigate("/dashboard")}}>SignIn</Button>
+      <Button variant="outline-success" className="col-md-4 mt-4" type="submit">SignIn</Button>
       </Form>
       <div className='d-flex justify-content-center mt-3 letter-spacing'>Don't have an account?&nbsp; <Link variant="success" className="active" id='link' aria-current="page" to="/signup">Signup!</Link></div>
       </div>
