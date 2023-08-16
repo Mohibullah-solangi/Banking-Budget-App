@@ -32,6 +32,8 @@ const Signup = () => {
     password: "",
     confirmpassword: "",
     InitialDeposit: "",
+    Expenses: [],
+    Friend:[]
   });
 
   return (

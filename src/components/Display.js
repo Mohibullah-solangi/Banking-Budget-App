@@ -3,7 +3,7 @@ import send_img from "../images/icons8-send-money-96.png";
 import withdraw_img from "../images/icons8-withdraw-64.png";
 import logo from "../images/vDHlc1gATvGuir2mwpUF_Y0uugH16L6gtYdVq.png";
 import { deposit, withdraw, send } from "../action-creator";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -16,7 +16,6 @@ import Expense from "./Expense";
 
 
 const Display = () => {
-
   const Dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -45,8 +44,9 @@ const Display = () => {
   const handleShow_s = () => setshow_send(true);
   const [input_send, setinput_send] = useState(0);
 
-const User = useSelector(state => state.info);
-
+  let user = localStorage.getItem("Entry");
+  let User= JSON.parse(user);
+  let Users = User.Friend;
 
   return (
     <>
@@ -107,27 +107,7 @@ const User = useSelector(state => state.info);
           </div>
         </div>
 
-        <div className="row  offset-sm-0 offset-md-2 offset-lg-3">
-          <div
-            className="col-11 col-md-10 col-lg-8  bg-light mt-2 mx-3 mb-5 text-start fw-bold"
-            id="expense"
-          >
-            Expenses
-            <div className="row" id="expenses">
-              <div className="col-6 col-md-8 fw-bold">Expense</div>
-              <div className="col-3 col-md-2 fw-bold">Cost</div>
-              <div className="col-3 col-md-2 fw-bold">Action</div>
-            </div>
-            <button
-              type="button"
-              className="btn btn-outline-success btn-sm my-4"
-              id="expense_btn"
-            >
-              {" "}
-              <Expense/>
-            </button>
-          </div>
-        </div>
+        <Expense/>
         <button type="button"
               className="btn btn-outline-success btn-sm my-1"
               id="expense_btn" onClick={()=>{navigate("/")}}>Logout</button>
@@ -222,8 +202,16 @@ const User = useSelector(state => state.info);
             <div className="col-4">
         
           <Form.Select aria-label="Floating label select example">
-            <option>Select User</option>
-            <option value="1">{User}</option>
+            
+            {Users.map((data, index)=>{
+              return(
+            <option value={index}  key={index}>
+                
+              
+                {data.Name ? data.Name: ""}</option>
+              )
+                                  
+            })}
             
           </Form.Select>
         

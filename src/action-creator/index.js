@@ -51,6 +51,7 @@ export const expense = (name, Amount)=>{
   obj.Name = name;
   obj.Amount = Amount;
 
+
   return(
     {
       type: 'expense',

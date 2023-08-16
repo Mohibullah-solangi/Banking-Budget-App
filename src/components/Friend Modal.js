@@ -20,7 +20,7 @@ function Friend() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+    handleClose()
     Dispatch(friend(name, email))
   
   };

@@ -1,4 +1,3 @@
-// import React from 'react'
 
 
 const amountReducer = (state =0 , action) => {
@@ -48,20 +47,21 @@ const amountReducer = (state =0 , action) => {
       let amount = parseInt(info.InitialDeposit);
       let Action = parseInt(action.payload);
 
-      localStorage.setItem("Friend", JSON.stringify(action.payload));
+     
       
-       let user = localStorage.getItem("Friend")
+       let user = localStorage.getItem("Entry")
             let friend = JSON.parse(user)
-      let  naame = friend.Name 
+      let  naame = friend.Friend 
+      console.log(naame)
       
-       if(Action<=amount && naame !== ""){
+       if((Action<=amount) && (naame.length>0)){
         state = amount - Action;
         const Balance = {...info, InitialDeposit: state}
 
          localStorage.setItem("Entry", JSON.stringify(Balance));
         
       }
-      else if(naame === ""){
+      else if(naame.length >= 0){
           alert("Kindly Add User as Friend")
       }
       else{
@@ -78,34 +78,23 @@ const amountReducer = (state =0 , action) => {
       const Info = localStorage.getItem("Entry");
       const info = JSON.parse(Info);
       let Amount = parseInt(info.InitialDeposit);
+     
+      let exp = [...info.Expenses, action.payload]
       let expense = action.payload.Amount;
       let Action = parseInt(expense);
-      let name = action.payload.name;
+     
       
-       if(Action<=Amount){
+       if(Action<=Amount && Amount>0){
         state = Amount - Action;
-        const Balance = {...info, InitialDeposit: state}
+        const Balance = {...info, InitialDeposit: state, Expenses: exp}
 
+       
          localStorage.setItem("Entry", JSON.stringify(Balance));
          localStorage.setItem("Expense", JSON.stringify(action.payload));
 
 
-        let record = document.getElementById('expense');
-        
-        console.log("entered")
 
-        const div2 = ()=>{
-            return(
-              ` <div className="row" id="expenses">
-              <div className="col-6 col-md-8 fw-bold">${name}</div>
-              <div className="col-3 col-md-2 fw-bold">PKR ${expense}</div>
-            </div>`
-            )
-        }
-       
-      record.append(div2);
-
-      return [console.log("expense recorded")];
+      return [console.log("expense")];
     }
   }
 
