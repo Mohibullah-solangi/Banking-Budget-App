@@ -98,6 +98,37 @@ const amountReducer = (state =0 , action) => {
     }
   }
 
+
+
+
+  
+
+  else if(action.type === 'rem'){
+
+       
+    const Info = localStorage.getItem("Entry");
+    const info = JSON.parse(Info);
+    
+   
+    let exp = [...info.Expenses]
+   console.log(exp)
+    // let expense = action.payload.Amount;
+    // let Action = parseInt(expense);
+   
+    
+    //  if(Action<=Amount && Amount>0){
+    //   state = Amount - Action;
+    //   const Balance = {...info, InitialDeposit: state, Expenses: exp}
+
+     
+    //    localStorage.setItem("Entry", JSON.stringify(Balance));
+    //    localStorage.setItem("Expense", JSON.stringify(action.payload));
+
+
+
+    return [console.log("expense")];
+  // }
+}
     else {
       return [state, console.log("initial Value")]; 
     }

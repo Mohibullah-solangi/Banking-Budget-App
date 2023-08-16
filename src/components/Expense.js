@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { expense } from '../action-creator';
+import { expense, rem } from '../action-creator';
 import { useDispatch } from 'react-redux';
 import dele from '../images/icons8-delete-90.png'
 
@@ -18,7 +18,11 @@ function Expense() {
   const [name, setName] = useState("");
   const [Amount, setAmount] = useState("");
  
+const del =()=>{
 
+  console.log("delete")
+Dispatch(rem())
+}
 
   const handleClose = () => setShow(false);
   const handleShow = () => {setShow(true); console.log("clicked")}
@@ -68,8 +72,8 @@ function Expense() {
                                     <td>
                                    {tableData.Amount ? `Rs. ${tableData.Amount} `  : ""}
                                     </td>
-                                    <td>
-                                    <img src={dele} alt="" style={{height: "25px"}} />
+                                    <td >
+                                    <img src={dele} alt="" style={{height: "25px"}} onClick={del}/>
                                     </td>
                                 </tr>
                             ))}

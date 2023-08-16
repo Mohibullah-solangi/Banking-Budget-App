@@ -60,3 +60,21 @@ export const expense = (name, Amount)=>{
     }
   )
 }
+
+
+
+export const rem = (name, Amount)=>{
+   
+  let obj = {}
+  obj.Name = name;
+  obj.Amount = Amount;
+
+
+  return(
+    {
+      type: 'rem',
+      payload: obj
+      
+    }
+  )
+}
