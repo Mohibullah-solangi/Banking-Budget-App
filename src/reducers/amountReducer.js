@@ -111,7 +111,7 @@ const amountReducer = (state =0 , action) => {
     
    
     let exp = [...info.Expenses]
-   console.log(exp)
+   
     // let expense = action.payload.Amount;
     // let Action = parseInt(expense);
    
