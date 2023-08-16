@@ -106,11 +106,11 @@ const amountReducer = (state =0 , action) => {
   else if(action.type === 'rem'){
 
        
-    const Info = localStorage.getItem("Entry");
-    const info = JSON.parse(Info);
+    // const Info = localStorage.getItem("Entry");
+    // const info = JSON.parse(Info);
     
    
-    let exp = [...info.Expenses]
+    // let exp = [...info.Expenses]
    
     // let expense = action.payload.Amount;
     // let Action = parseInt(expense);

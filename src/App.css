@@ -105,6 +105,10 @@ body{
   color: black;
 }
 
+#footer a{
+  text-decoration: none;
+}
+
 
 @media only screen and (max-width: 375px) {
 #display{
@@ -112,6 +116,9 @@ body{
 }
 
   #display-footer {
+    font-size: 10px;
+  }
+  #footer{
     font-size: 10px;
   }
 
